@@ -58,10 +58,10 @@ table(raw.iat$data.condition, exclude=NULL)
 ```{r}
 # Preprocessing for the IAT scoring function.
 
-raw.iat$blockName <- ifelse(raw.iat$data.condition %in% c('transWords/Bad words,cisWords/Good words'), 
+raw.iat$blockName <- ifelse(raw.iat$data.condition %in% c('Transpersonas/Slikti vārdi,Cispersonas/Labi vārdi'), 
                         ifelse(raw.iat$data.block %in% c(3,6), 'B3', 
                                ifelse(raw.iat$data.block %in% c(4,7), 'B4', NA)), 
-                        ifelse(raw.iat$data.condition %in% c('cisWords/Bad words,transWords/Good words'), 
+                        ifelse(raw.iat$data.condition %in% c('Cispersonas/Slikti vārdi,Transpersonas/Labi vārdi'), 
                           ifelse(raw.iat$data.block %in% c(3,6), 'B6', 
                                  ifelse(raw.iat$data.block %in% c(4,7), 'B7', NA)), NA))
 table(raw.iat$blockName, exclude=NULL)
@@ -148,9 +148,9 @@ write.csv(qst, paste(proc.directory, 'qst.csv', sep='\\'))
 conds <- as.data.frame(t(data_list[['unnamedTask']]))
 blockOrder <- raw.iat[which(!is.na(raw.iat$block3Cond)),c('sessionId','block3Cond')]
 
-blockOrder$iat.order <- ifelse(blockOrder$block3Cond %in% c('transWords/Bad words,cisWords/Good words'), 
+blockOrder$iat.order <- ifelse(blockOrder$block3Cond %in% c('Transpersonas/Slikti vārdi,Cispersonas/Labi vārdi'), 
                         'compatibleFirst', 
-                        ifelse(blockOrder$block3Cond %in% c('cisWords/Bad words,transWords/Good words'), 
+                        ifelse(blockOrder$block3Cond %in% c('Cispersonas/Slikti vārdi,Transpersonas/Labi vārdi'), 
                           'incompatibleFirst', NA))
 table(blockOrder$iat.order, exclude=NULL)
 
