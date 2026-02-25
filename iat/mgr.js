@@ -68,6 +68,17 @@ define(['managerAPI',
                 scriptUrl: 'transiat.js'
             }],
 
+            tabs: [{
+                type: 'quest',
+                name: 'tabs',
+                scriptUrl: 'tabs.js'
+            }],
+            ds_r: [{
+                type: 'quest',
+                name: 'ds_r',
+                scriptUrl: 'ds_r.js'
+            }],
+
             lastpage: [{
                 type: 'message',
                 name: 'lastpage',
@@ -136,10 +147,12 @@ define(['managerAPI',
 
 
             { inherit: 'intro' },
+            { inherit: 'explicits' },
             {
                 mixer: 'random',
                 data: [
-                    { inherit: 'explicits' },
+                    { inherit: 'tabs' },
+                    { inherit: 'ds_r' },
 
                     // force the instructions to preceed the iat
                     {
@@ -152,9 +165,9 @@ define(['managerAPI',
                 ]
             },
 
-            { inherit: 'uploading' },
-            { inherit: 'lastpage' },
-            { inherit: 'redirect' }
+{ inherit: 'uploading' },
+{ inherit: 'lastpage' },
+{ inherit: 'redirect' }
         ]);
 
         return API.script;

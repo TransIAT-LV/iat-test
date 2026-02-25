@@ -20,14 +20,15 @@ define(['questAPI'], function (Quest) {
     */
     API.addPagesSet('basicPage', {
         noSubmit: false, //Change to true if you don't want to show the submit button.
+        submitText: "Tālāk",
         v1style: 2,
         decline: false,
         declineText: isTouch ? 'Decline' : 'Decline to Answer',
         autoFocus: true,
-        header: 'Sociāldemogrāfiskie dati',
+        header: 'Demogrāfiskie dati',
         text: pageText,
         numbered: false,
-        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 2' : 'Page <%= pagesMeta.number %> out of 2'
+        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 1' : 'Page <%= pagesMeta.number %> out of 1'
     });
 
     /**
@@ -87,21 +88,37 @@ define(['questAPI'], function (Quest) {
     API.addQuestionsSet('age', {
         inherit: 'number',
         name: 'age',
-        stem: "Jūsu vecums (ievadīt tikai skaitli).",
-        min: 1,
+        stem: "Vecums (ievadīt tikai skaitli)",
+        min: 18,
         max: 100,
         required: true,
         errorMsg: {
-            min: "Atļautas tikai vērtības no 1 - 100.",
-            max: "Atļautas tikai vērtības no 1 - 100.",
+            min: "Atļautas tikai vērtības no 18 - 100.",
+            max: "Atļautas tikai vērtības no 18 - 100.",
             number: "Lūdzu ievadiet tikai skaitli."
         }
+
     });
+    API.addQuestionsSet('education', {
+        inherit: 'singleChoice',
+        style: 'multiButtons',
+        name: 'education',
+        stem: "Izglītības līmenis",
+        answers: [
+            { text: 'Pamata', value: 1 },
+            { text: 'Vidējā', value: 2 },
+            { text: 'Bakalaura', value: 3 },
+            { text: 'Maģistra', value: 4 },
+            { text: 'Doktora', value: 5 },
+            { text: 'Cits', value: 6 },
+        ]
+    });
+
     API.addQuestionsSet('gender', {
         inherit: 'singleChoice',
         style: 'multiButtons',
-        name: 'birthmonth',
-        stem: "Jūsu dzimtes identitāte.",
+        name: 'gender',
+        stem: "Dzimtes identitāte",
         answers: [
             { text: 'Cis-sieviete', value: 1 },
             { text: 'Cis-vīrietis', value: 2 },
@@ -124,7 +141,7 @@ define(['questAPI'], function (Quest) {
     API.addSequence([
         {
             inherit: 'basicPage',
-            questions: [{ inherit: 'age' }, { inherit: 'gender' }, { inherit: 'knowsTransperson' }]
+            questions: [{ inherit: 'age' }, { inherit: 'education' }, { inherit: 'gender' }, { inherit: 'knowsTransperson' }]
         }
     ]);
 
