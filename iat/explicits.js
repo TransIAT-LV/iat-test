@@ -4,10 +4,7 @@ define(['questAPI'], function (Quest) {
     var API = new Quest();
     var isTouch = API.getGlobal().isTouch;
     const pageText =
-        `<div style="margin: 15px;">
-            <b>Cispersona</b> - cilvēks, kura dzimtes identitāte sakrīt ar dzimšanas brīdī noteikto dzimumu.<br>
-            <b>Transpersona</b> - cilvēks, kura dzimtes identitāte atšķiras no dzimšanas brīdī noteiktā dzimuma.<br>
-            <b>Nebināra persona</b> - cilvēks, kurš neidentificējas kā vīrietis vai sieviete. Tas iekļauj dažādas identitātes (piemēram, personas, kuru identitāte variē starp dzimtēm, „bez dzimtes” personas u.c.)
+        `<div>
         </div`;
 
     /**
@@ -88,7 +85,7 @@ define(['questAPI'], function (Quest) {
     API.addQuestionsSet('age', {
         inherit: 'number',
         name: 'age',
-        stem: "Vecums (ievadīt tikai skaitli)",
+        stem: "<b>Vecums</b> (ievadīt tikai skaitli)",
         min: 18,
         max: 100,
         required: true,
@@ -103,7 +100,7 @@ define(['questAPI'], function (Quest) {
         inherit: 'singleChoice',
         style: 'multiButtons',
         name: 'education',
-        stem: "Izglītības līmenis",
+        stem: "<b>Izglītības līmenis</b>",
         answers: [
             { text: 'Pamata', value: 1 },
             { text: 'Vidējā', value: 2 },
@@ -118,7 +115,7 @@ define(['questAPI'], function (Quest) {
         inherit: 'singleChoice',
         style: 'multiButtons',
         name: 'gender',
-        stem: "Dzimtes identitāte",
+        stem: "<b>Dzimtes identitāte</b> <br/>  <span style='font-size:0.7em; '> <i>Cispersona</i> - cilvēks, kura dzimtes identitāte sakrīt ar dzimšanas brīdī noteikto dzimumu.<br> <i>Transpersona</i> - cilvēks, kura dzimtes identitāte atšķiras no dzimšanas brīdī noteiktā dzimuma.<br> <i>Nebināra persona</i> - cilvēks, kurš neidentificējas kā vīrietis vai sieviete. Tas iekļauj dažādas identitātes (piemēram, personas, kuru identitāte variē starp dzimtēm, „bez dzimtes” personas u.c.)</span>",
         answers: [
             { text: 'Cis-sieviete', value: 1 },
             { text: 'Cis-vīrietis', value: 2 },
@@ -132,7 +129,7 @@ define(['questAPI'], function (Quest) {
     API.addQuestionsSet('knowsTransperson', {
         inherit: 'singleChoice',
         name: 'knowsTransperson',
-        stem: "Vai Jūs personīgi pazīstat kādu transpersonu vai nebināru personu?",
+        stem: "<b>Vai Jūs personīgi pazīstat kādu transpersonu vai nebināru personu?</b>",
         answers: [
             { text: 'Jā', value: 1 },
             { text: 'Nē', value: 2 }
