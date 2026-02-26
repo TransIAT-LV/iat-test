@@ -107,7 +107,6 @@ define(['questAPI'], function (Quest) {
             { text: 'Bakalaura', value: 3 },
             { text: 'Maģistra', value: 4 },
             { text: 'Doktora', value: 5 },
-            { text: 'Cits', value: 6 },
         ]
     });
 
