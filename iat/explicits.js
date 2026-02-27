@@ -114,7 +114,7 @@ define(['questAPI'], function (Quest) {
         inherit: 'singleChoice',
         style: 'multiButtons',
         name: 'gender',
-        stem: "<b>Dzimtes identitāte</b> <br/>  <span style='font-size:0.7em; '> <i>Cispersona</i> - cilvēks, kura dzimtes identitāte sakrīt ar dzimšanas brīdī noteikto dzimumu.<br> <i>Transpersona</i> - cilvēks, kura dzimtes identitāte atšķiras no dzimšanas brīdī noteiktā dzimuma.<br> <i>Nebināra persona</i> - cilvēks, kurš neidentificējas kā vīrietis vai sieviete. Tas iekļauj dažādas identitātes (piemēram, personas, kuru identitāte variē starp dzimtēm, „bez dzimtes” personas u.c.)</span>",
+        stem: "<b>Dzimtes identitāte</b> <br/>  <span style='font-size:0.7em; '> <i>Cispersona</i> - cilvēks, kura dzimtes identitāte sakrīt ar dzimšanas brīdī noteikto dzimumu.<br> <i>Transpersona</i> - cilvēks, kura dzimtes identitāte atšķiras no dzimšanas brīdī noteiktā dzimuma.<br> <i>Nebināra persona</i> - cilvēks, kurš neidentificējas kā vīrietis vai sieviete. Tas iekļauj dažādas identitātes (piemēram, personas, kuru identitāte variē starp dzimtēm, „bez dzimtes” personas u.c.).</span>",
         answers: [
             { text: 'Cis-sieviete', value: 1 },
             { text: 'Cis-vīrietis', value: 2 },
