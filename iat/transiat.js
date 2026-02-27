@@ -205,7 +205,7 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
             '<br/>',
             'Ja tu kļūdīsies, parādīsies sarkans <font color="#ff0000"><b>X</b></font>. Pieskaries otrai pusei. <u>Pildi testu cik ātri spēj</u> saglabājot precizitāti.<br/>',
             '</p>',
-            '<p align="center">Touch the <b>lower </b> green area to start.</p>',
+            '<p align="center">Pieskarieties <b>apakšējam </b> zaļajam laukumam, lai sāktu.</p>',
             '</div>'
         ].join('\n'),
  
