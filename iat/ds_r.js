@@ -5,7 +5,7 @@ define(['questAPI'], function (Quest) {
     var isTouch = API.getGlobal().isTouch;
     const pageText1 =
         `<div style="margin: 15px;">
-            <h1>Lūdzu atzīmē, cik tu piekrīti katram no sekojošajiem apgalvojumiem, vai cik patiesi tie ir par tevi.</h1>
+            <h1>Brīdinājums: <b>Turpmākajās divās lapās tiks aprakstītas dažādas nepatīkamas un pretīgas situācijas, kurām Jums būs jānovērtē pretīguma līmenis.</b> <br/>Lūdzu atzīmē, cik tu piekrīti katram no sekojošajiem apgalvojumiem, vai cik patiesi tie ir par tevi.</h1>
         </div>`;
     const pageText2 =
         `<div style="margin: 15px;">
